@@ -66,7 +66,7 @@ const Header = () => {
         <div className="container-xxl">
           <div className="row">
             <div className="col-6">
-              <p className="text-white mb-0">Free Shipping Over Rs.100</p>
+              <p className="text-white mb-0">Free Shipping Over $. 50</p>
             </div>
             <div className="col-6">
               <p className="text-end text-white mb-0">
@@ -160,7 +160,7 @@ const Header = () => {
                         {cartState?.length ? cartState?.length : 0}
                       </span>
                       <p className="mb-0">
-                        Rs. {!cartState?.length ? 0 : total ? total : 0}
+                        $. {!cartState?.length ? 0 : total ? total : 0}
                       </p>
                     </div>
                   </Link>

@@ -58,7 +58,7 @@ const Home = () => {
               <div className="main-banner-content position-absolute">
                 <h4>SUPERCHARGED FOR PROS.</h4>
                 <h5>iPad S13+ Pro.</h5>
-                <p>From Rs. 81,900.00 </p>
+                <p>From $. 1200 </p>
                 <Link className="button">BUY NOW</Link>
               </div>
             </div>
@@ -75,7 +75,7 @@ const Home = () => {
                   <h4>Best Sake</h4>
                   <h5>MacBook Pro.</h5>
                   <p>
-                    From Rs. 1,29,900.00 <br />
+                    From $. 1200 <br />
                   </p>
                 </div>
               </div>
@@ -89,7 +89,7 @@ const Home = () => {
                   <h4>NEW ARRIVAL</h4>
                   <h5>But IPad Air</h5>
                   <p>
-                    From Rs. 21,625.00 <br />
+                    From $. 600 <br />
                   </p>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const Home = () => {
                   <h4>NEW ARRIVAL</h4>
                   <h5>But IPad Air</h5>
                   <p>
-                    From Rs. 41,900.00 <br />
+                    From $. 400 <br />
                   </p>
                 </div>
               </div>
@@ -117,7 +117,7 @@ const Home = () => {
                   <h4>NEW ARRIVAL</h4>
                   <h5>But Headphone</h5>
                   <p>
-                    From Rs. 41,000.00 <br />
+                    From $. 200 <br />
                   </p>
                 </div>
               </div>
@@ -261,7 +261,7 @@ const Home = () => {
                           activeColor="#ffd700"
                         />
 
-                        <p className="price">Rs. {item?.price}</p>
+                        <p className="price">$. {item?.price}</p>
                       </div>
                       <div className="action-bar position-absolute">
                         <div className="d-flex flex-column gap-15">
@@ -300,7 +300,7 @@ const Home = () => {
               <div className="famous-content position-absolute">
                 <h5>Big Screen</h5>
                 <h6>Smart Watch Series 7</h6>
-                <p>From Rs. 399</p>
+                <p>From $. 299</p>
               </div>
             </div>
           </div>
@@ -328,21 +328,21 @@ const Home = () => {
               <div className="famous-content position-absolute">
                 <h5 className="text-dark">smartphones</h5>
                 <h6 className="text-dark">Iphone 14 Pro.</h6>
-                <p className="text-dark">Now in Green. From Rs. 61,000.00</p>
+                <p className="text-dark">Now in Green. From $. 1300</p>
               </div>
             </div>
           </div>
           <div className="col-3">
             <div className="famous-card position-relative">
               <img
-                src="images/famous-3.webp"
+                src="images/famous-4.webp"
                 className="img-fluid"
                 alt="famous"
               />
               <div className="famous-content position-absolute">
                 <h5 className="text-dark">home speakers</h5>
                 <h6 className="text-dark">Room-filling sound.</h6>
-                <p className="text-dark">From Rs. 699</p>
+                <p className="text-dark">From $. 200</p>
               </div>
             </div>
           </div>
@@ -432,7 +432,7 @@ const Home = () => {
                           activeColor="#ffd700"
                         />
 
-                        <p className="price">Rs. {item?.price}</p>
+                        <p className="price">$. {item?.price}</p>
                       </div>
                       <div className="action-bar position-absolute">
                         <div className="d-flex flex-column gap-15">

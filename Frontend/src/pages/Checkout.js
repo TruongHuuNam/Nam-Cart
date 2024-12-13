@@ -50,9 +50,8 @@ const Checkout = () => {
 
   const config2 = {
     headers: {
-      Authorization: `Bearer ${
-        getTokenFromLocalStorage !== null ? getTokenFromLocalStorage.token : ""
-      }`,
+      Authorization: `Bearer ${getTokenFromLocalStorage !== null ? getTokenFromLocalStorage.token : ""
+        }`,
       Accept: "application/json",
     },
   };
@@ -146,7 +145,7 @@ const Checkout = () => {
       key: "rzp_test_HSSeDI22muUrLR", // Enter the Key ID generated from the Dashboard
       amount: amount,
       currency: currency,
-      name: "Cart's corner",
+      name: "HuuNam's corner",
       description: "Test Transaction",
 
       order_id: order_id,
@@ -177,12 +176,12 @@ const Checkout = () => {
         dispatch(resetState());
       },
       prefill: {
-        name: "Dev Corner",
-        email: "devcorner@example.com",
-        contact: "9999999999",
+        name: "Nam Huu",
+        email: "truonghuunam2002@gmail.com",
+        contact: "0705700753",
       },
       notes: {
-        address: "developer's cornor office",
+        address: "STU's university",
       },
       theme: {
         color: "#61dafb",
@@ -198,7 +197,7 @@ const Checkout = () => {
         <div className="row">
           <div className="col-7">
             <div className="checkout-left-data">
-              <h3 className="website-name">Cart Corner</h3>
+              <h3 className="website-name">Huu Nam Corner</h3>
               <nav
                 style={{ "--bs-breadcrumb-divider": ">" }}
                 aria-label="breadcrumb"
@@ -231,7 +230,7 @@ const Checkout = () => {
               </nav>
               <h4 className="title total">Contact Information</h4>
               <p className="user-details total">
-                Dev Jariwala (devjariwala8444@gmail.com)
+                Nam Huu (truonghuunam2002@gmail.com)
               </p>
               <h4 className="mb-3">Shipping Address</h4>
               <form
@@ -251,7 +250,7 @@ const Checkout = () => {
                     <option value="" selected disabled>
                       Select Country
                     </option>
-                    <option value="India">India</option>
+                    <option value="India">VietNam</option>
                   </select>
                   <div className="error ms-2 my-1">
                     {formik.touched.country && formik.errors.country}
@@ -334,9 +333,19 @@ const Checkout = () => {
                     onBlur={formik.handleChange("state")}
                   >
                     <option value="" selected disabled>
-                      Select State
+                      Select province
                     </option>
-                    <option value="Gujarat">Gujarat</option>
+                    <option value="HoChiMinh">Ho Chi Minh</option>
+                    <option value="HaNoi">Ha Noi</option>
+                    <option value="DaNang">Da Nang</option>
+                    <option value="DongNai">Dong Nai</option>
+                    <option value="Gia Lai">Gia Lai</option>
+                    <option value="ThaiBinh">Thai Binh</option>
+                    <option value="AnGiang">An Giang</option>
+                    <option value="KienGiang">Kien Giang</option>
+                    <option value="CaoBang">Cao Bang</option>
+                    <option value="BinhDinh">Binh Dinh</option>
+                    <option value="BinhDuong">Binh Duong</option>
                   </select>
                   <div className="error ms-2 my-1">
                     {formik.touched.state && formik.errors.state}
@@ -406,7 +415,7 @@ const Checkout = () => {
                       </div>
                       <div className="flex-grow-1">
                         <h5 className="total">
-                          Rs. {item?.price * item?.quantity}
+                          $. {item?.price * item?.quantity}
                         </h5>
                       </div>
                     </div>
@@ -417,18 +426,18 @@ const Checkout = () => {
               <div className="d-flex justify-content-between align-items-center">
                 <p className="total">Subtotal</p>
                 <p className="total-price">
-                  Rs. {totalAmount ? totalAmount : "0"}
+                  $. {totalAmount ? totalAmount : "0"}
                 </p>
               </div>
               <div className="d-flex justify-content-between align-items-center">
                 <p className="mb-0 total">Shipping</p>
-                <p className="mb-0 total-price">Rs. 100</p>
+                <p className="mb-0 total-price">$. 100</p>
               </div>
             </div>
             <div className="d-flex justify-content-between align-items-center border-bootom py-4">
               <h4 className="total">Total</h4>
               <h5 className="total-price">
-                Rs. {totalAmount ? totalAmount + 100 : "0"}
+                $. {totalAmount ? totalAmount + 100 : "0"}
               </h5>
             </div>
           </div>

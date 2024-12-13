@@ -8,7 +8,7 @@ const checkout = async (req, res) => {
   const { amount } = req.body;
   const option = {
     amount: amount * 100,
-    currency: "INR",
+    currency: "USD",
   };
   const order = await instance.orders.create(option);
   res.json({

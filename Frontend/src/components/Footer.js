@@ -38,21 +38,21 @@ const Footer = () => {
               <h4 className="text-white mb-4">Contact Us</h4>
               <div>
                 <address className="text-white fs-6">
-                  Hno : Daiict college, Reliance Cross Rd, <br />{" "}
-                  Gandhinagar,Gujarat <br />
+                  Hno : STU university, 180 Cao Lo, <br />{" "}
+                  Ward 4, District 8 <br />
                   PinCode: 382007
                 </address>
                 <a
                   href="tel:+91 8264954234"
                   className="mt-3 d-block mb-1 text-white"
                 >
-                  +91 8264954234
+                  +84 705700753
                 </a>
                 <a
-                  href="mailto:devjariwala8444@gmail.com"
+                  href="mailto:truonghuunam2002@gmail.com"
                   className="mt-2 d-block mb-0 text-white"
                 >
-                  devjariwala8444@gmail.com
+                  truonghuunam2002@gmail.com
                 </a>
                 <div className="social_icons d-flex align-items-center gap-30 mt-4">
                   <a className="text-white" href="#">
@@ -113,7 +113,7 @@ const Footer = () => {
           <div className="row">
             <div className="col-12">
               <p className="text-center mb-0 text-white">
-                &copy; {new Date().getFullYear()}; Powered by Cart Corner
+                &copy; {new Date().getFullYear()}; Powered by Huu Nam
               </p>
             </div>
           </div>
