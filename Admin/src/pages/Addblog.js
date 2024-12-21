@@ -59,10 +59,10 @@ const Addblog = () => {
 
   useEffect(() => {
     if (isSuccess && createdBlog) {
-      toast.success("Blog Added Successfullly!");
+      toast.success("Blog Added Successfully!");
     }
     if (isSuccess && updatedBlog) {
-      toast.success("Blog Updated Successfullly!");
+      toast.success("Blog Updated Successfully!");
       navigate("/admin/blog-list");
     }
     if (isError) {
@@ -71,8 +71,16 @@ const Addblog = () => {
   }, [isSuccess, isError, isLoading]);
 
   const img = [];
-  blogImages?.forEach((i) => {
+  imgState?.forEach((i) => {
     img.push({
+      public_id: i.public_id,
+      url: i.url,
+    });
+  });
+
+  const imgshow = [];
+  blogImages?.forEach((i) => {
+    imgshow.push({
       public_id: i.public_id,
       url: i.url,
     });
@@ -81,14 +89,13 @@ const Addblog = () => {
   useEffect(() => {
     formik.values.images = img;
   }, [img]);
-
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
       title: blogName || "",
       description: blogDesc || "",
       category: blogCategory || "",
-      images: img || "",
+      images: blogImages || "",
     },
     validationSchema: schema,
     onSubmit: (values) => {
@@ -112,14 +119,14 @@ const Addblog = () => {
         {getBlogId !== undefined ? "Edit" : "Add"} Blog
       </h3>
 
-      <div className="">
+      <div className="text">
         <form action="" onSubmit={formik.handleSubmit}>
           <div className="mt-4">
             <CustomInput
               type="text"
               label="Enter Blog Title"
               name="title"
-              onChange={formik.handleChange("title")}
+              onChng={formik.handleChange("title")}
               onBlr={formik.handleBlur("title")}
               val={formik.values.title}
             />
@@ -174,7 +181,20 @@ const Addblog = () => {
             </Dropzone>
           </div>
           <div className="showimages d-flex flex-wrap mt-3 gap-3">
-            {img?.map((i, j) => {
+            {imgshow?.map((i, j) => {
+              return (
+                <div className=" position-relative" key={j}>
+                  <button
+                    type="button"
+                    onClick={() => dispatch(delImg(i.public_id))}
+                    className="btn-close position-absolute"
+                    style={{ top: "10px", right: "10px" }}
+                  ></button>
+                  <img src={i.url} alt="" width={200} height={200} />
+                </div>
+              );
+            })}
+            {imgState?.map((i, j) => {
               return (
                 <div className=" position-relative" key={j}>
                   <button

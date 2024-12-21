@@ -1,26 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import BlogCard from "../components/BlogCard";
-import ProductCard from "../components/ProductCard";
 import SpecialProduct from "../components/SpecialProduct";
 import Container from "../components/Container";
 import { services } from "../utils/Data";
 import prodcompare from "../images/prodcompare.svg";
-import wish from "../images/wish.svg";
+import WishlistButton from "../components/WishlistButton";
 import wishlist from "../images/wishlist.svg";
-import watch from "../images/watch.jpg";
-import watch2 from "../images/watch-1.avif";
-import addcart from "../images/add-cart.svg";
-import view from "../images/view.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllBlogs } from "../features/blogs/blogSlice";
 import moment from "moment";
 import { getAllProducts } from "../features/products/productSlilce";
 import ReactStars from "react-rating-stars-component";
 import { addToWishlist } from "../features/products/productSlilce";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-
+import wish from "../images/wish.svg";
+import wish2 from "../images/wish-black.svg";
 const Home = () => {
   const blogState = useSelector((state) => state?.blog?.blog);
   const productState = useSelector((state) => state?.product?.product);
@@ -58,7 +53,7 @@ const Home = () => {
               <div className="main-banner-content position-absolute">
                 <h4>SUPERCHARGED FOR PROS.</h4>
                 <h5>iPad S13+ Pro.</h5>
-                <p>From $. 1200 </p>
+                <p>From $ 1200 </p>
                 <Link className="button">BUY NOW</Link>
               </div>
             </div>
@@ -75,7 +70,7 @@ const Home = () => {
                   <h4>Best Sake</h4>
                   <h5>MacBook Pro.</h5>
                   <p>
-                    From $. 1200 <br />
+                    From $ 1200 <br />
                   </p>
                 </div>
               </div>
@@ -87,9 +82,9 @@ const Home = () => {
                 />
                 <div className="small-banner-content position-absolute">
                   <h4>NEW ARRIVAL</h4>
-                  <h5>But IPad Air</h5>
+                  <h5>Apple Watch</h5>
                   <p>
-                    From $. 600 <br />
+                    From $ 600 <br />
                   </p>
                 </div>
               </div>
@@ -103,7 +98,7 @@ const Home = () => {
                   <h4>NEW ARRIVAL</h4>
                   <h5>But IPad Air</h5>
                   <p>
-                    From $. 400 <br />
+                    From $ 400 <br />
                   </p>
                 </div>
               </div>
@@ -117,7 +112,7 @@ const Home = () => {
                   <h4>NEW ARRIVAL</h4>
                   <h5>But Headphone</h5>
                   <p>
-                    From $. 200 <br />
+                    From $ 200 <br />
                   </p>
                 </div>
               </div>
@@ -220,15 +215,16 @@ const Home = () => {
                   <div key={index} className={"col-3"}>
                     <div className="product-card position-relative">
                       <div className="wishlist-icon position-absolute">
-                        <button className="border-0 bg-transparent">
-                          <img
-                            src={wish}
-                            alt="wishlist"
-                            onClick={(e) => {
-                              addToWish(item?._id);
-                            }}
-                          />
-                        </button>
+                        {/* <button className="border-0 bg-transparent">
+                            <img
+                              src={wish}
+                              alt="wishlist"
+                              onClick={(e) => {
+                                addToWish(item?._id);
+                              }}
+                            />
+                          </button> */}
+                        <WishlistButton item={item} addToWish={addToWish} />
                       </div>
                       <div className="product-image">
                         <img
@@ -261,7 +257,7 @@ const Home = () => {
                           activeColor="#ffd700"
                         />
 
-                        <p className="price">$. {item?.price}</p>
+                        <p className="price">$ {item?.price}</p>
                       </div>
                       <div className="action-bar position-absolute">
                         <div className="d-flex flex-column gap-15">
@@ -300,7 +296,7 @@ const Home = () => {
               <div className="famous-content position-absolute">
                 <h5>Big Screen</h5>
                 <h6>Smart Watch Series 7</h6>
-                <p>From $. 299</p>
+                <p>From $ 299</p>
               </div>
             </div>
           </div>
@@ -326,9 +322,9 @@ const Home = () => {
                 alt="famous"
               />
               <div className="famous-content position-absolute">
-                <h5 className="text-dark">smartphones</h5>
+                <h5 className="text-dark">Smartphones</h5>
                 <h6 className="text-dark">Iphone 14 Pro.</h6>
-                <p className="text-dark">Now in Green. From $. 1300</p>
+                <p className="text-dark">Now in Green. From $ 1300</p>
               </div>
             </div>
           </div>
@@ -340,9 +336,9 @@ const Home = () => {
                 alt="famous"
               />
               <div className="famous-content position-absolute">
-                <h5 className="text-dark">home speakers</h5>
+                <h5 className="text-dark">Home speakers</h5>
                 <h6 className="text-dark">Room-filling sound.</h6>
-                <p className="text-dark">From $. 200</p>
+                <p className="text-dark">From $ 200</p>
               </div>
             </div>
           </div>
@@ -391,7 +387,7 @@ const Home = () => {
                   <div key={index} className={"col-3"}>
                     <div className="product-card position-relative">
                       <div className="wishlist-icon position-absolute">
-                        <button className="border-0 bg-transparent">
+                        {/* <button className="border-0 bg-transparent">
                           <img
                             src={wish}
                             alt="wishlist"
@@ -399,7 +395,8 @@ const Home = () => {
                               addToWish(item?._id);
                             }}
                           />
-                        </button>
+                        </button> */}
+                        <WishlistButton item={item} addToWish={addToWish} />
                       </div>
                       <div className="product-image">
                         <img
@@ -408,7 +405,10 @@ const Home = () => {
                           alt="product image"
                           height={"250px"}
                           width={"100%"}
-                          onClick={() => navigate("/product/" + item?._id)}
+                          onClick={() => {
+                            navigate(`/product/${item._id}`);
+                            window.location.replace(window.location.pathname);
+                          }}
                         />
                         <img
                           src={item?.images[0].url}
@@ -416,7 +416,10 @@ const Home = () => {
                           alt="product image"
                           height={"250px"}
                           width={"100%"}
-                          onClick={() => navigate("/product/" + item?._id)}
+                          onClick={() => {
+                            navigate(`/product/${item._id}`);
+                            window.location.replace(window.location.pathname);
+                          }}
                         />
                       </div>
                       <div className="product-details">
@@ -432,7 +435,7 @@ const Home = () => {
                           activeColor="#ffd700"
                         />
 
-                        <p className="price">$. {item?.price}</p>
+                        <p className="price">$ {item?.price}</p>
                       </div>
                       <div className="action-bar position-absolute">
                         <div className="d-flex flex-column gap-15">
@@ -522,6 +525,6 @@ const Home = () => {
       </Container>
     </>
   );
-};
-
+}
 export default Home;
+

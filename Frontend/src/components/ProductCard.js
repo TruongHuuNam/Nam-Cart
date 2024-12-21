@@ -54,15 +54,22 @@ const ProductCard = (props) => {
         return (
           <div
             key={index}
-            className={` ${
-              location.pathname == "/product" ? `gr-${grid}` : "col-3"
-            } `}
+            className={`${location.pathname === "/product" ? `gr-${grid}` : "col-3"}`}
+            onClick={() => {
+              navigate(`/product/${item._id}`);
+              window.location.replace(window.location.pathname);
+            }}
+            style={{ cursor: "pointer", position: "relative" }} // Đặt position cho div cha
           >
             <div className="product-card position-relative">
               <div className="wishlist-icon position-absolute">
                 <button
                   className="border-0 bg-transparent"
-                  onClick={(e) => addToWish(item?._id)}
+                  onClick={(e) => {
+                    e.stopPropagation(); // Ngăn chặn sự kiện tiếp tục lan ra div cha
+                    addToWish(item?._id);
+                  }}
+                  style={{ position: "absolute", top: "10px", right: "10px", zIndex: 10 }} // Đặt z-index cao và vị trí cho button
                 >
                   {isWishlist ? (
                     <AiFillHeart className="fs-5 me-1" />
@@ -79,7 +86,10 @@ const ProductCard = (props) => {
                   alt="product image"
                   height={"250px"}
                   width={"100%"}
-                  onClick={() => navigate("/product/" + item?._id)}
+                  onClick={() => {
+                    navigate(`/product/${item._id}`);
+
+                  }}
                 />
                 <img
                   src={item?.images[0]?.url}
@@ -87,7 +97,10 @@ const ProductCard = (props) => {
                   alt="product image"
                   height={"250px"}
                   width={"100%"}
-                  onClick={() => navigate("/product/" + item?._id)}
+                  onClick={() => {
+                    navigate(`/product/${item._id}`);
+
+                  }}
                 />
               </div>
               <div className="product-details">

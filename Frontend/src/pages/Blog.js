@@ -47,11 +47,10 @@ const Blog = () => {
                         id={item?._id}
                         title={item?.title}
                         description={item?.description}
-                        image={item?.images[0]?.url}
-                        date={moment(item?.createdAt).format(
-                          "MMMM Do YYYY, h:mm a"
-                        )}
+                        image={item?.images?.length > 0 ? item.images[0].url : "images/blog-1.jpg"}
+                        date={moment(item?.createdAt).format("MMMM Do YYYY, h:mm a")}
                       />
+
                     </div>
                   );
                 })}

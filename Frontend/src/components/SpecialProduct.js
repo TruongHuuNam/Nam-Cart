@@ -1,9 +1,10 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const SpecialProduct = (props) => {
   const { title, brand, totalrating, price, sold, quantity, id, img } = props;
-
+  const navigate = useNavigate();
   console.log(id);
   return (
     <>
@@ -56,13 +57,16 @@ const SpecialProduct = (props) => {
                   ></div>
                 </div>
               </div>
-              <Link className="button" to={"/product/" + id}>
+              <Link className="button" to={"/product/" + id} onClick={() => {
+                navigate(`/product/${id}`);
+                window.location.replace(window.location.pathname);
+              }}>
                 View
               </Link>
             </div>
           </div>
         </div>
-      </div>
+      </div >
     </>
   );
 };

@@ -20,6 +20,7 @@ import { SiBrandfolder } from "react-icons/si";
 import { BiCategoryAlt } from "react-icons/bi";
 import { Layout, Menu, theme } from "antd";
 import { useNavigate } from "react-router-dom";
+import { login } from "../features/auth/authSlice";
 const { Header, Sider, Content } = Layout;
 const MainLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -33,7 +34,7 @@ const MainLayout = () => {
         <div className="logo">
           <h2 className="text-white fs-5 text-center py-3 mb-0">
             <span className="sm-logo">CC</span>
-            <span className="lg-logo">Cart Corner</span>
+            <span className="lg-logo">HuuNam Corner</span>
           </h2>
         </div>
         <Menu
@@ -189,7 +190,7 @@ const MainLayout = () => {
                 <img
                   width={32}
                   height={32}
-                  src="https://stroyka-admin.html.themeforest.scompiler.ru/variants/ltr/images/customers/customer-4-64x64.jpg"
+                  src="https://res.cloudinary.com/dqtwaruuh/image/upload/v1734146857/avt_v0q7mm.jpg"
                   alt=""
                 />
               </div>
@@ -199,8 +200,8 @@ const MainLayout = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <h5 className="mb-0">Dev</h5>
-                <p className="mb-0">devjariwala8444@gmail.com</p>
+                <h5 className="mb-0">Huu Nam</h5>
+                <p className="mb-0">truonghuunam2002@gmail.com</p>
               </div>
               <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <li>
@@ -217,6 +218,8 @@ const MainLayout = () => {
                     className="dropdown-item py-1 mb-1"
                     style={{ height: "auto", lineHeight: "20px" }}
                     to="/"
+
+
                   >
                     Signout
                   </Link>
@@ -224,7 +227,7 @@ const MainLayout = () => {
               </div>
             </div>
           </div>
-        </Header>
+        </Header> 
         <Content
           style={{
             margin: "24px 16px",

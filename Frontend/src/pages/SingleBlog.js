@@ -14,12 +14,11 @@ const SingleBlog = () => {
   const getBlogId = location.pathname.split("/")[2];
 
   const dispatch = useDispatch();
+
   useEffect(() => {
-    getblog();
-  }, []);
-  const getblog = () => {
-    dispatch(getABlog(getBlogId));
-  };
+    dispatch(getABlog(getBlogId)); // Gọi API để lấy chi tiết blog
+  }, [dispatch, getBlogId]);
+
   return (
     <>
       <Meta title={blogState?.title} />
@@ -31,8 +30,13 @@ const SingleBlog = () => {
               <Link to="/blogs" className="d-flex align-items-center gap-10">
                 <HiOutlineArrowLeft className="fs-4" /> Go back to Blogs
               </Link>
-              <h3 className="title">{blogState?.title} </h3>
-              <img src={blog} className="img-fluid w-100 my-4" alt="blog" />
+              <h3 className="title">{blogState?.title}</h3>
+              {/* Hiển thị đúng ảnh từ dữ liệu */}
+              <img
+                src={blogState?.images?.length > 0 ? blogState.images[0].url : blog}
+                className="img-fluid w-100 my-4"
+                alt={blogState?.title || "blog"}
+              />
               <p
                 dangerouslySetInnerHTML={{ __html: blogState?.description }}
               ></p>

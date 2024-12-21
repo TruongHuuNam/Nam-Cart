@@ -24,6 +24,7 @@ const Signup = () => {
   const authState = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       firstname: "",
@@ -38,11 +39,11 @@ const Signup = () => {
     },
   });
 
-  // useEffect(() => {
-  //   if (authState.createdUser !== null && authState.isError === false) {
-  //     navigate("/login");
-  //   }
-  // }, [authState]);
+  useEffect(() => {
+    if (authState.createdUser && !authState.isError) {
+      navigate("/login");
+    }
+  }, [authState, navigate]);
 
   return (
     <>

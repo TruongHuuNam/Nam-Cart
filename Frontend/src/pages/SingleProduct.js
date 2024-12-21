@@ -86,7 +86,7 @@ const SingleProduct = () => {
     textField.remove();
   };
 
-  const closeModal = () => {};
+  const closeModal = () => { };
   const [popularProduct, setPopularProduct] = useState([]);
 
   useEffect(() => {
