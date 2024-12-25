@@ -446,10 +446,27 @@ footer .input-group-text {
   font-size: 1.2em;
 }
 
+
+
 .product-image img {
   object-fit: cover;
   /* Cắt ảnh nếu cần để phù hợp với khung */
   border-radius: 8px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  /* Đảm bảo tỷ lệ ảnh không bị méo */
+}
+
+.other-product-images img {
+  cursor: pointer;
+  object-fit: contain;
+  /* Hiển thị đầy đủ hình ảnh */
+  max-width: 100px;
+  /* Kích thước ảnh nhỏ */
+  height: auto;
 }
 
 .product-card .product-image {
@@ -651,6 +668,7 @@ footer .input-group-text {
 .gr-3 {
   width: 24%;
 }
+
 
 .gr-12 .product-card {
   display: flex;

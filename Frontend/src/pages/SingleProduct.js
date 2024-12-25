@@ -66,9 +66,9 @@ const SingleProduct = () => {
     }
   };
   const props = {
-    width: 594,
+    width: 600,
     height: 600,
-    zoomWidth: 600,
+    zoomWidth: 800,
 
     img: productState?.images[0].url
       ? productState?.images[0].url

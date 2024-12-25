@@ -145,7 +145,7 @@ const Checkout = () => {
       key: "rzp_test_HSSeDI22muUrLR", // Enter the Key ID generated from the Dashboard
       amount: amount,
       currency: currency,
-      name: "HuuNam's corner",
+      name: "TuanNam's Cart",
       description: "Test Transaction",
 
       order_id: order_id,
@@ -197,7 +197,7 @@ const Checkout = () => {
         <div className="row">
           <div className="col-7">
             <div className="checkout-left-data">
-              <h3 className="website-name">Huu Nam Corner</h3>
+              <h3 className="website-name">TuanNam Cart</h3>
               <nav
                 style={{ "--bs-breadcrumb-divider": ">" }}
                 aria-label="breadcrumb"

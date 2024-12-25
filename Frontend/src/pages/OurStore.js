@@ -163,7 +163,7 @@ const OurStore = () => {
                     name=""
                     defaultValue={"manula"}
                     className="form-control form-select"
-                    id=""
+                    id="" 
                     onChange={(e) => setSort(e.target.value)}
                   >
                     <option value="title">Alphabetically, A-Z</option>

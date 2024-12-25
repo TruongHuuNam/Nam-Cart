@@ -212,7 +212,7 @@ const Home = () => {
             productState?.map((item, index) => {
               if (item.tags === "featured") {
                 return (
-                  <div key={index} className={"col-3"}>
+                  <div key={index} className={"col-3"} style={{ marginBottom: "30px" }}>
                     <div className="product-card position-relative">
                       <div className="wishlist-icon position-absolute">
                         {/* <button className="border-0 bg-transparent">
@@ -233,7 +233,10 @@ const Home = () => {
                           alt="product image"
                           height={"250px"}
                           width={"260px"}
-                          onClick={() => navigate("/product/" + item?._id)}
+                          onClick={() => {
+                            navigate(`/product/${item._id}`);
+                            window.location.replace(window.location.pathname);
+                          }}
                         />
                         <img
                           src={item?.images[0]?.url}
@@ -241,7 +244,10 @@ const Home = () => {
                           alt="product image"
                           height={"250px"}
                           width={"260px"}
-                          onClick={() => navigate("/product/" + item?._id)}
+                          onClick={() => {
+                            navigate(`/product/${item._id}`);
+                            window.location.replace(window.location.pathname);
+                          }}
                         />
                       </div>
                       <div className="product-details">

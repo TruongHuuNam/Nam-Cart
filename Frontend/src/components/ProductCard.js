@@ -66,10 +66,10 @@ const ProductCard = (props) => {
                 <button
                   className="border-0 bg-transparent"
                   onClick={(e) => {
-                    e.stopPropagation(); // Ngăn chặn sự kiện tiếp tục lan ra div cha
+                    e.stopPropagation();
                     addToWish(item?._id);
                   }}
-                  style={{ position: "absolute", top: "10px", right: "10px", zIndex: 10 }} // Đặt z-index cao và vị trí cho button
+                  style={{ position: "absolute", top: "10px", right: "10px", zIndex: 10 }}
                 >
                   {isWishlist ? (
                     <AiFillHeart className="fs-5 me-1" />

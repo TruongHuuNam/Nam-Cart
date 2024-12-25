@@ -33,8 +33,8 @@ const MainLayout = () => {
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logo">
           <h2 className="text-white fs-5 text-center py-3 mb-0">
-            <span className="sm-logo">CC</span>
-            <span className="lg-logo">HuuNam Corner</span>
+            <span className="sm-logo">TN</span>
+            <span className="lg-logo">TuanNam Cart</span>
           </h2>
         </div>
         <Menu
@@ -227,7 +227,7 @@ const MainLayout = () => {
               </div>
             </div>
           </div>
-        </Header> 
+        </Header>
         <Content
           style={{
             margin: "24px 16px",
