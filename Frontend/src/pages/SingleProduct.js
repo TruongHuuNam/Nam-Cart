@@ -215,6 +215,7 @@ const SingleProduct = () => {
                   <div className="d-flex gap-10 flex-column mt-2 mb-3">
                     <h3 className="product-heading">Color :</h3>
                     <Color
+                      
                       setColor={setColor}
                       colorData={productState?.color}
                     />

@@ -395,6 +395,26 @@ footer .input-group-text {
 }
 
 /*  Blog Part ends here */
+.colors li {
+  width: 30px;
+  /* Kích thước vòng tròn màu */
+  height: 30px;
+  border-radius: 50%;
+  /* Biến thành hình tròn */
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.colors li:hover {
+  transform: scale(1.2);
+  /* Phóng to khi hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Tạo bóng */
+  border: 2px solid #000;
+  /* Đường viền khi hover */
+}
+
 
 /* Product Card */
 
